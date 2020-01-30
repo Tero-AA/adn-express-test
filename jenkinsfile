@@ -37,7 +37,7 @@ pipeline {
     
     stage('Compile & Unit Tests') {
       steps{
-        sh 'npm intall' 
+        sh 'npm install' 
         echo "------------>Unit Tests<------------"
         sh 'npm test' 
       }
