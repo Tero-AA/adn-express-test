@@ -34,10 +34,16 @@ pipeline {
         ])
       }
     }
-    
-    stage('Compile & Unit Tests') {
-      steps{
+
+    stage('Build') {
+      steps {
+        echo "------------>Build<------------"
         sh 'npm install' 
+      }
+    }  
+    
+    stage('Unit Tests') {
+      steps{
         echo "------------>Unit Tests<------------"
         sh 'npm test' 
       }
@@ -53,11 +59,6 @@ pipeline {
     //   }
     // }
 
-    stage('Build') {
-      steps {
-        echo "------------>Build<------------"
-      }
-    }  
   }
 
   post {
